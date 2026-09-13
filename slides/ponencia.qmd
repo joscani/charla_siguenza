@@ -1,0 +1,434 @@
+---
+title: "Cómo usa la IA un estadístico erre-ro"
+subtitle: "Del trabajo a la piscina pasando por el aula"
+author: "José Luis Cañadas Reche · idealista"
+date: "2026-11-19"
+date-format: "D [de] MMMM [de] YYYY"
+lang: es
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    slide-number: c/t
+    width: 1280
+    height: 720
+    incremental: false
+    transition: none
+    footer: "6R4EDI · Sigüenza"
+    preview-links: auto
+    code-line-numbers: false
+    highlight-style: github
+---
+
+## José Luis Cañadas Reche {.smaller}
+
+::: {.columns}
+::: {.column width="60%"}
+- Estadístico. Empecé analizando encuestas sociales en el **CSIC**
+- Desde 2016 en empresa: Telefónica, Orange y **idealista** desde 2025
+- Erre-ro y bloguero desde antes de que R fuera *cool*
+:::
+::: {.column width="40%"}
+![](img/foto.jpg){width="80%"}
+
+<!-- TODO(JL): copiar aquí la foto del proyecto -->
+:::
+:::
+
+---
+
+## {.center}
+
+::: {.r-fit-text}
+Si escribe el código por mí,
+
+**¿para qué me sirve saber estadística?**
+:::
+
+::: {.notes}
+Es la pregunta que se está haciendo media sala. Y sobre todo los estudiantes
+con el TFG a medias. Nombrarla ahora me compra su atención 35 minutos.
+:::
+
+---
+
+## {.center}
+
+::: {.r-fit-text}
+La IA **sube el suelo**.
+
+No sube el **techo**.
+:::
+
+::: {.notes}
+El suelo: lo que antes no hacías por pereza, por falta de tiempo, o porque
+montar la infraestructura costaba más que el análisis.
+
+El techo: la calidad máxima de lo que produces. Sigue donde estaba: en lo que sabes.
+
+Anuncio el recorrido: tres sitios donde uso la IA con R. El trabajo, el aula
+y la piscina.
+:::
+
+## El método {.center}
+
+::: {.r-fit-text}
+Yo **dirijo** → ella **programa** → yo **verifico**
+:::
+
+::: {.notes}
+No es "le pido código y lo pego".
+
+Yo decido qué hay que calcular y con qué método. Ella escribe.
+Y la verificación no es opcional ni delegable.
+
+La charla entera es la demostración de que el primer paso y el tercero
+siguen siendo míos.
+:::
+
+## Las herramientas {.smaller}
+
+::: {.columns}
+::: {.column width="50%"}
+### Claude Code
+Agente en terminal
+
+- Lee y escribe ficheros del repo
+- Ejecuta R e itera solo
+- Es lo que hace posible el flujo de los `.qmd`
+:::
+::: {.column width="50%"}
+### Posit AI en Positron
+**20 €/mes**
+
+- Varios modelos
+- Integrado en **Positron y RStudio**
+- **Lee del REPL**: ve tu sesión
+- No hay que irse a la terminal
+:::
+:::
+
+::: {.callout-note}
+Si sois analistas y no vivís en la terminal, **esta segunda es la que os
+recomiendo**: vive dentro del IDE donde ya trabajáis.
+:::
+
+<!-- TODO(JL): confirmar modelos disponibles y precio vigente en noviembre 2026 -->
+
+# 1 · El trabajo {background-color="#1a3a5c"}
+
+Informes `.qmd` analíticos y el informe catastral
+
+## El problema no es el análisis {.smaller}
+
+Es que **el mismo análisis tiene dos audiencias incompatibles**.
+
+::: {.columns}
+::: {.column width="50%"}
+### Equipo técnico → repo
+El código, los supuestos, el detalle reproducible
+:::
+::: {.column width="50%"}
+### Negocio → Confluence
+La conclusión, el gráfico, y ni una línea de R
+:::
+:::
+
+. . .
+
+Antes: escribir el análisis una vez y **traducirlo a mano otra vez**.
+
+Y la segunda versión, con prisa, se hacía mal o no se hacía.
+
+## El flujo real {.smaller}
+
+1. **Yo decido** el análisis y le digo **que sea en R** *(no negociable: es el idioma del equipo y del repo)*
+2. **Ella escribe** el `.qmd`
+3. **Yo verifico los resultados** — no el estilo del código
+4. Le pido **dos salidas del mismo documento**: técnica para el repo, negocio para Confluence
+
+<!-- TODO(JL): ¿cómo resuelves las dos versiones? params de Quarto, perfiles,
+     chunks condicionales... Concrétalo: es lo que la gente va a querer copiar -->
+
+::: {.notes}
+El informe catastral es el mejor ejemplo.
+TODO: una frase de qué es y por qué era buen candidato.
+:::
+
+## {.smaller}
+
+### El informe catastral
+
+![](img/empresa-informe.png)
+
+<!-- TODO(JL): captura revisada por confidencialidad. Si hace falta, ofusca
+     las cifras y quédate con la estructura del documento -->
+
+## Dónde está el techo: **verificar** {.smaller}
+
+<!-- TODO(JL): 1-2 errores REALES de la IA. Los mejores son del tipo:
+     - agregó mal
+     - eligió el estadístico equivocado
+     - ignoró los NA
+     - se inventó un supuesto
+     - "funcionaba" pero contestaba a otra pregunta
+     No errores de sintaxis: esos los caza R solo. -->
+
+::: {.callout-important}
+## Error 1
+*(pendiente)*
+:::
+
+. . .
+
+::: {.r-fit-text}
+El código compilaba.
+
+El informe era bonito.
+
+**El número estaba mal.**
+:::
+
+. . .
+
+Nadie de negocio lo habría notado.
+
+## Qué puso el estadístico
+
+**Decidir** qué se calcula, con qué método y con qué supuestos.
+
+**Comprobar** que el resultado es correcto.
+
+. . .
+
+La IA subió el suelo en la parte que odiaba —la segunda versión del documento,
+la que antes no se hacía— y **no tocó el techo**.
+
+# 2 · El aula {background-color="#1a3a5c"}
+
+Un simulador de encuestas electorales
+
+## Explicar lo difícil de explicar
+
+> ¿Por qué dos encuestas **honestas y bien hechas** dan resultados distintos?
+
+Es de las cosas más difíciles de enseñar con palabras.
+
+Y de las más fáciles de enseñar con **una perilla que se mueve**.
+
+. . .
+
+::: {.callout-warning}
+## Que quede claro
+**La app muestrea correctamente.** No es un ejemplo de la IA equivocándose.
+Es una herramienta docente que funciona.
+:::
+
+## Qué me dio la IA {.smaller}
+
+Toda la carpintería de Shiny: reactividad, layout, sliders, gráficos, el pulido.
+
+Horas de trabajo que **no son estadística**.
+
+. . .
+
+Y que son exactamente la razón por la que muchos docentes nunca llegan a
+construir su material interactivo.
+
+. . .
+
+::: {.r-fit-text}
+La barrera para que un profesor tenga
+
+su propio simulador **acaba de desaparecer**
+:::
+
+## Demo {.center background-color="#0f2233"}
+
+::: {.r-fit-text}
+Tres perillas
+:::
+
+::: {.notes}
+GUION CERRADO. 4 minutos. Nada de explorar en directo.
+
+1. Tamaño de muestra y margen de error. Muevo n. Se estrecha el intervalo.
+   Y duplicar la muestra NO duplica la precisión: el coste crece mucho más
+   rápido que la precisión.
+
+2. Sesgo de no respuesta. La realidad no ha cambiado. El muestreo sigue
+   siendo correcto. Y la estimación se desplaza. <- aquí se hace el silencio.
+
+3. Votante oculto. Declaran algo distinto de lo que votan.
+
+PLAN B: si no arranca en 15 segundos, paso a la siguiente diapositiva.
+:::
+
+## Plan B {visibility="uncounted"}
+
+<!-- TODO(JL): grabar tres clips de 30-60 s y ponerlos aquí.
+     Si la app no arranca en 15 segundos, avanzo a esta diapositiva
+     y nadie se entera. Ensayar así al menos una vez. -->
+
+::: {.panel-tabset}
+### n y margen de error
+![](img/demo-n.mp4)
+
+### No respuesta
+![](img/demo-norespuesta.mp4)
+
+### Votante oculto
+![](img/demo-oculto.mp4)
+:::
+
+## Lo que todavía no está: la **cocina**
+
+Ponderación y recuerdo de voto.
+
+Que es donde de verdad **se decide el titular**.
+
+::: {.notes}
+Lo digo YO antes de que me lo pregunten. Convierte una carencia en una idea
+de futuro, y deja el gancho servido para el turno de preguntas.
+:::
+
+## Qué puso el estadístico: el **diseño** {.smaller}
+
+Aquí no hay ningún error de la IA que enseñar. Y por eso este bloque es
+interesante.
+
+. . .
+
+**Qué sesgos merece la pena simular. Cómo se formalizan. Qué tiene que ver
+el alumno en pantalla para que le haga clic.**
+
+Eso no sale de un modelo. Sale de haber analizado encuestas y de haber
+intentado explicárselas a alguien.
+
+. . .
+
+::: {.r-fit-text}
+La IA construye el simulador.
+
+**Lo que simular, lo pones tú.**
+:::
+
+# 3 · La piscina {background-color="#1a3a5c"}
+
+Mis datos de natación del Garmin
+
+## Un análisis que no le importa a nadie
+
+Años de sesiones de natación registradas por el reloj.
+
+Nunca las había analizado en serio.
+
+. . .
+
+No le importa a nadie. No lo paga nadie. No cabe en un fin de semana.
+
+. . .
+
+**Y ese es justamente el argumento.**
+
+## Qué me dio la IA {.smaller}
+
+Descarga, limpieza de los datos del Garmin, exploración, gráficos.
+
+<!-- TODO(JL): 1-2 hallazgos concretos sobre tu natación. Cuanto más personal
+     y sorprendente, mejor: aquí el público está relajado y es cuando más se
+     acuerdan de lo que dices -->
+
+![](img/natacion.png)
+
+. . .
+
+::: {.r-fit-text}
+Este es el caso donde **el suelo sube más**
+:::
+
+Un análisis que no se habría hecho jamás, ahora existe.
+
+No porque sea difícil: porque nunca habría merecido las horas.
+
+## Qué puso el estadístico: **interpretar** {.smaller}
+
+Los gráficos salen solos.
+
+Saber si esa mejora **es una mejora** —o es que ese mes nadé menos series
+largas— no.
+
+<!-- TODO(JL): el ejemplo concreto. Idealmente uno donde el gráfico sugiere
+     una cosa y la explicación real es otra -->
+
+. . .
+
+::: {.r-fit-text}
+La respuesta llegó en diez minutos.
+
+**La pregunta la puse yo.**
+:::
+
+# Cierre {background-color="#1a3a5c"}
+
+## Qué hace bien y qué hace mal {.smaller}
+
+::: {.columns}
+::: {.column width="50%"}
+### Bien
+- Carpintería: Shiny, Quarto, boilerplate, docs
+- Traducir entre formatos y audiencias
+- Bajar el coste de **empezar** algo
+- Hacer posible lo que no compensaba
+:::
+::: {.column width="50%"}
+### Mal
+- Elegir el método correcto
+- Los supuestos que nadie escribió
+- Decirte **cuándo su respuesta está mal**
+- Saber qué pregunta había que hacer
+:::
+:::
+
+## Las tres preguntas {.smaller}
+
+::: {.incremental}
+1. **¿Es esta la pregunta correcta?**
+2. ¿Es este el método correcto para responderla?
+3. **¿Es creíble este resultado?**
+:::
+
+. . .
+
+Un modelo te ayuda con la segunda —si tú ya la sabes plantear.
+
+La primera y la tercera son **enteramente tuyas**.
+
+## {.center}
+
+::: {.r-fit-text}
+La IA sube el suelo.
+
+**El techo lo sigues poniendo tú.**
+:::
+
+## {.center .smaller}
+
+::: {.r-fit-text}
+Por eso hay que seguir
+
+enseñando **estadística**
+:::
+
+<br>
+
+Si la carpintería la hace la máquina, lo único que te distingue es el criterio.
+
+Que es lo que se enseña aquí.
+
+## Gracias {.center}
+
+**José Luis Cañadas Reche**
+
+idealista · Senior Data Scientist
+
+<!-- TODO(JL): blog, GitHub, mastodon/bluesky, correo -->
