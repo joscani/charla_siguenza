@@ -6,8 +6,8 @@
 <script src="ponencia_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="ponencia_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="ponencia_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="ponencia_files/libs/quarto-html/quarto-syntax-highlighting-acf12a64177840b8d86f2d4f01b2e9fb.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.37">
+<link href="ponencia_files/libs/quarto-html/quarto-syntax-highlighting-bb62276ab45c84d9efd712f51ff97b5a.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="José Luis Cañadas Reche · idealista">
   <title>Cómo usa la IA un estadístico erre-ro</title>
@@ -20,10 +20,13 @@
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
     */
-    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -136,7 +139,7 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-José Luis Cañadas Reche · idealista 
+José Luis Cañadas Reche · idealista
 </div>
 </div>
 </div>
@@ -149,7 +152,7 @@ José Luis Cañadas Reche · idealista
 <div class="column" style="width:60%;">
 <ul>
 <li>Estadístico. Empecé analizando encuestas sociales en el <strong>CSIC</strong></li>
-<li>Desde 2016 en empresa: Telefónica, Orange y <strong>idealista</strong> desde 2025</li>
+<li>Desde 2016 en empresa: Consultora, Telefónica, Orange e <strong>idealista</strong> desde 2025</li>
 <li>Erre-ro y bloguero desde antes de que R fuera <em>cool</em></li>
 </ul>
 </div><div class="column" style="width:40%;">
@@ -228,14 +231,14 @@ José Luis Cañadas Reche · idealista
 <p>Agente en terminal</p>
 <ul>
 <li>Lee y escribe ficheros del repo</li>
-<li>Ejecuta R e itera solo</li>
+<li>Ejecuta R, bash, python, lo que sea e itera solo</li>
 <li>Es lo que hace posible el flujo de los <code>.qmd</code></li>
 </ul>
 </div><div class="column" style="width:50%;">
 <h3 id="posit-ai-en-positron">Posit AI en Positron</h3>
 <p><strong>20 €/mes</strong></p>
 <ul>
-<li>Varios modelos</li>
+<li>Varios modelos. Yo uso mucho glm 5.3</li>
 <li>Integrado en <strong>Positron y RStudio</strong></li>
 <li><strong>Lee del REPL</strong>: ve tu sesión</li>
 <li>No hay que irse a la terminal</li>
@@ -280,7 +283,7 @@ José Luis Cañadas Reche · idealista
 <section id="el-flujo-real" class="slide level2 smaller">
 <h2>El flujo real</h2>
 <ol type="1">
-<li><strong>Yo decido</strong> el análisis y le digo <strong>que sea en R</strong> <em>(no negociable: es el idioma del equipo y del repo)</em></li>
+<li><strong>Yo decido</strong> el análisis y le digo <strong>que sea en R</strong> <em>(o python o sql o lo que sea, no hay miedo)</em></li>
 <li><strong>Ella escribe</strong> el <code>.qmd</code></li>
 <li><strong>Yo verifico los resultados</strong> — no el estilo del código</li>
 <li>Le pido <strong>dos salidas del mismo documento</strong>: técnica para el repo, negocio para Confluence</li>
@@ -288,7 +291,7 @@ José Luis Cañadas Reche · idealista
 <!-- TODO(JL): ¿cómo resuelves las dos versiones? params de Quarto, perfiles,
      chunks condicionales... Concrétalo: es lo que la gente va a querer copiar -->
 <aside class="notes">
-<p>El informe catastral es el mejor ejemplo. TODO: una frase de qué es y por qué era buen candidato.</p>
+<p>El informe catastral es el mejor ejemplo. Recuperar slides de charla granada TODO: una frase de qué es y por qué era buen candidato.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -326,7 +329,7 @@ José Luis Cañadas Reche · idealista
 <p><strong>Error 1</strong></p>
 </div>
 <div class="callout-content">
-<p><em>(pendiente)</em></p>
+<p><em>Cambio de orden en filas de una tabla html de plotly Datos de Andalucía totales no cuadraban</em></p>
 </div>
 </div>
 </div>
@@ -360,7 +363,7 @@ José Luis Cañadas Reche · idealista
 <p>¿Por qué dos encuestas <strong>honestas y bien hechas</strong> dan resultados distintos?</p>
 </blockquote>
 <p>Es de las cosas más difíciles de enseñar con palabras.</p>
-<p>Y de las más fáciles de enseñar con <strong>una perilla que se mueve</strong>.</p>
+<p>Y de las más fáciles de enseñar con <strong>una barra que se mueve</strong>.</p>
 <div class="fragment">
 <div class="callout callout-warning callout-titled callout-style-default">
 <div class="callout-body">
@@ -394,12 +397,13 @@ José Luis Cañadas Reche · idealista
 <section id="demo" class="slide level2 center" data-background-color="#0f2233">
 <h2>Demo</h2>
 <div class="r-fit-text">
-<p>Tres perillas</p>
+<p>Tres ejemplos</p>
 </div>
 <aside class="notes">
-<p>GUION CERRADO. 4 minutos. Nada de explorar en directo.</p>
-<ol type="1">
-<li><p>Tamaño de muestra y margen de error. Muevo n.&nbsp;Se estrecha el intervalo. Y duplicar la muestra NO duplica la precisión: el coste crece mucho más rápido que la precisión.</p></li>
+<p>GUION CERRADO. 4 minutos. Nada de explorar en directo. https://canadasreche.shinyapps.io/sim-encuestas-electorales/</p>
+<ol start="0" type="1">
+<li><p>Población simulada, respetando distribuciones reales.</p></li>
+<li><p>Tamaño de muestra y margen de error. Uso diferentes muestras, tengo población simulada, puedo hacerlo , soy omnipotente</p></li>
 <li><p>Sesgo de no respuesta. La realidad no ha cambiado. El muestreo sigue siendo correcto. Y la estimación se desplaza. &lt;- aquí se hace el silencio.</p></li>
 <li><p>Votante oculto. Declaran algo distinto de lo que votan.</p></li>
 </ol>
@@ -471,7 +475,7 @@ José Luis Cañadas Reche · idealista
 <section>
 <section id="la-piscina" class="title-slide slide level1 center" data-background-color="#1a3a5c">
 <h1>3 · La piscina</h1>
-<p>Mis datos de natación del Garmin</p>
+<p>Mis datos de natación del Garmin <a href="https://canadasreche.shinyapps.io/mi-garmin-dashboard/">Enlace</a></p>
 </section>
 <section id="un-análisis-que-no-le-importa-a-nadie" class="slide level2">
 <h2>Un análisis que no le importa a nadie</h2>
@@ -538,7 +542,7 @@ José Luis Cañadas Reche · idealista
 </ul>
 </div></div>
 </section>
-<section id="las-tres-preguntas" class="slide level2 smaller">
+<section id="las-tres-preguntas" class="slide level2 greater">
 <h2>Las tres preguntas</h2>
 <ol type="1">
 <li class="fragment"><strong>¿Es esta la pregunta correcta?</strong></li>

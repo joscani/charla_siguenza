@@ -24,7 +24,7 @@ format:
 ::: {.columns}
 ::: {.column width="60%"}
 - Estadístico. Empecé analizando encuestas sociales en el **CSIC**
-- Desde 2016 en empresa: Telefónica, Orange y **idealista** desde 2025
+- Desde 2016 en empresa: Consultora, Telefónica, Orange e **idealista** desde 2025
 - Erre-ro y bloguero desde antes de que R fuera *cool*
 :::
 ::: {.column width="40%"}
@@ -93,14 +93,14 @@ siguen siendo míos.
 Agente en terminal
 
 - Lee y escribe ficheros del repo
-- Ejecuta R e itera solo
+- Ejecuta R, bash, python, lo que sea e itera solo
 - Es lo que hace posible el flujo de los `.qmd`
 :::
 ::: {.column width="50%"}
 ### Posit AI en Positron
 **20 €/mes**
 
-- Varios modelos
+- Varios modelos. Yo uso mucho glm 5.3
 - Integrado en **Positron y RStudio**
 - **Lee del REPL**: ve tu sesión
 - No hay que irse a la terminal
@@ -141,7 +141,7 @@ Y la segunda versión, con prisa, se hacía mal o no se hacía.
 
 ## El flujo real {.smaller}
 
-1. **Yo decido** el análisis y le digo **que sea en R** *(no negociable: es el idioma del equipo y del repo)*
+1. **Yo decido** el análisis y le digo **que sea en R** *(o python o sql o lo que sea, no hay miedo)*
 2. **Ella escribe** el `.qmd`
 3. **Yo verifico los resultados** — no el estilo del código
 4. Le pido **dos salidas del mismo documento**: técnica para el repo, negocio para Confluence
@@ -150,7 +150,7 @@ Y la segunda versión, con prisa, se hacía mal o no se hacía.
      chunks condicionales... Concrétalo: es lo que la gente va a querer copiar -->
 
 ::: {.notes}
-El informe catastral es el mejor ejemplo.
+El informe catastral es el mejor ejemplo. Recuperar slides de charla granada
 TODO: una frase de qué es y por qué era buen candidato.
 :::
 
@@ -175,7 +175,8 @@ TODO: una frase de qué es y por qué era buen candidato.
 
 ::: {.callout-important}
 ## Error 1
-*(pendiente)*
+*Cambio de orden en filas de una tabla html de plotly
+Datos de Andalucía totales no cuadraban*
 :::
 
 . . .
@@ -213,7 +214,7 @@ Un simulador de encuestas electorales
 
 Es de las cosas más difíciles de enseñar con palabras.
 
-Y de las más fáciles de enseñar con **una perilla que se mueve**.
+Y de las más fáciles de enseñar con **una barra que se mueve**.
 
 . . .
 
@@ -245,15 +246,15 @@ su propio simulador **acaba de desaparecer**
 ## Demo {.center background-color="#0f2233"}
 
 ::: {.r-fit-text}
-Tres perillas
+Tres ejemplos
 :::
 
 ::: {.notes}
 GUION CERRADO. 4 minutos. Nada de explorar en directo.
+https://canadasreche.shinyapps.io/sim-encuestas-electorales/
 
-1. Tamaño de muestra y margen de error. Muevo n. Se estrecha el intervalo.
-   Y duplicar la muestra NO duplica la precisión: el coste crece mucho más
-   rápido que la precisión.
+0. Población simulada, respetando distribuciones reales. 
+1. Tamaño de muestra y margen de error. Uso diferentes muestras, tengo población simulada, puedo hacerlo , soy omnipotente
 
 2. Sesgo de no respuesta. La realidad no ha cambiado. El muestreo sigue
    siendo correcto. Y la estimación se desplaza. <- aquí se hace el silencio.
@@ -315,6 +316,7 @@ La IA construye el simulador.
 # 3 · La piscina {background-color="#1a3a5c"}
 
 Mis datos de natación del Garmin
+[Enlace](https://canadasreche.shinyapps.io/mi-garmin-dashboard/)
 
 ## Un análisis que no le importa a nadie
 
@@ -389,7 +391,7 @@ La respuesta llegó en diez minutos.
 :::
 :::
 
-## Las tres preguntas {.smaller}
+## Las tres preguntas {.greater}
 
 ::: {.incremental}
 1. **¿Es esta la pregunta correcta?**
