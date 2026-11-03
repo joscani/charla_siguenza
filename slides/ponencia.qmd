@@ -583,6 +583,69 @@ Si le pongo un mínimo de distancia, la comparación ya tiene sentido.
 <!-- TODO(JL): probar la pregunta con "de más de 1000 m" y, si sale bien, captura -->
 :::
 
+# Extra: estas diapositivas {background-color="#1a3a5c"}
+
+Solo si voy bien de tiempo
+
+::: {.notes}
+USAR SOLO SI LLEGO AQUÍ ANTES DEL MINUTO 42. Si no, saltar al Cierre.
+Son 3 minutos.
+:::
+
+## Estas diapositivas también son IA {.smaller}
+
+Le pedí las capturas del simulador. **Escribió R que maneja la app** por mí (versión resumida):
+
+```r
+library(chromote)
+b <- ChromoteSession$new()
+b$Page$navigate("https://canadasreche.shinyapps.io/sim-encuestas-electorales/")
+js <- function(x) b$Runtime$evaluate(x)$result$value
+js("$('#sesgo_no_respuesta').prop('checked', true).trigger('change')")
+js("$('#ejecutar').click()")
+b$screenshot("encuesta-norespuesta.png", selector = "#grafico_comparacion")
+```
+
+Abre Chrome sin ventana, marca las casillas, pulsa Ejecutar, espera y hace la foto.
+
+Y además midió cuánto tarda cada simulación y leyó el código de la app en GitHub.
+
+::: {.notes}
+Script completo: scripts/capturas_simulador.R (repo charla_siguenza).
+Lo hizo Claude Code en una sesión de trabajo conmigo, el 2 y 3 de nov de 2026.
+Yo no sabía usar chromote. Ese es el suelo subiendo otra vez.
+:::
+
+## Y también se equivocó {.smaller}
+
+| Qué hizo mal | Cómo se vio |
+|---|---|
+| Las capturas salían **un escenario retrasadas** | Las tablas eran idénticas con y sin sesgo |
+| Iba a publicar la **referencia catastral** en un script | Revisión antes de subir a GitHub |
+| Dijo que mis posts de octubre **no eran con IA** | Lo corregí yo: lo sabía |
+
+. . .
+
+::: {.r-fit-text}
+Yo dirijo → ella programa → **yo verifico**.
+
+También aquí.
+:::
+
+::: {.notes}
+1. Capturas retrasadas: el script esperaba al texto "Simulación completada",
+   pero ese texto seguía en pantalla de la ejecución anterior. Hacía la foto
+   antes de que acabara la nueva. Las imágenes eran bonitas y estaban mal.
+   Se vio porque los números no cambiaban al activar los sesgos.
+   Lo detectó la propia IA al revisar las cifras; luego corrigió la espera.
+2. Referencia catastral: estaba dentro de la ruta del CSV en el script del
+   gráfico anónimo. Se vio al buscarla en todo lo que se iba a subir.
+3. Posts de octubre: dedujo "no hay IA" porque los commits no llevaban
+   Co-Authored-By. Ausencia de evidencia no es evidencia de ausencia.
+Es la misma historia de toda la charla: el error plausible solo lo ve quien
+sabe qué número esperar.
+:::
+
 # Cierre {background-color="#1a3a5c"}
 
 ## Qué hace bien y qué hace mal {.smaller}

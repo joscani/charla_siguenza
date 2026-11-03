@@ -334,6 +334,17 @@ Los gráficos salen solos. Saber si esa mejora es una mejora o es que ese mes na
 
 ---
 
+## Extra (3 min) · Estas diapositivas también son IA
+
+Solo si llegas aquí antes del minuto 42. Si no, salta al Cierre.
+
+- **Qué hizo la IA:** escribió en R (paquete `chromote`) un script que abre la app del simulador en Chrome sin ventana, marca casillas, pulsa Ejecutar, espera y hace las capturas (`scripts/capturas_simulador.R`). También midió los tiempos y leyó el código de la app en GitHub.
+- **En qué se equivocó** (todo real, sesión del 2 y 3 nov 2026):
+  1. Capturas con un escenario de retraso: esperaba al texto «Simulación completada», que seguía en pantalla de la ejecución anterior. Se vio porque las tablas no cambiaban al activar los sesgos.
+  2. Iba a publicar la referencia catastral dentro de la ruta de un script. Se vio al revisar lo que se subía a GitHub.
+  3. Dedujo que los posts de octubre no eran con IA porque los commits no llevaban `Co-Authored-By`. Lo corregiste tú.
+- **Remate:** «Yo dirijo → ella programa → yo verifico. También aquí.»
+
 ## 44–48 min · Cierre
 
 **Diapo — Qué hace bien y qué hace mal.** Dos columnas, sin adornos.
