@@ -229,7 +229,7 @@ José Luis Cañadas Reche · idealista
 <h2></h2>
 <div class="r-fit-text">
 <p>Si escribe el código por mí,</p>
-<p><strong>¿para qué me sirve saber estadística?</strong></p>
+<p><strong>¿Me sirve entonces de algo, saber estadística?</strong></p>
 </div>
 <aside class="notes">
 <p>Es la pregunta que se está haciendo media sala. Y sobre todo los estudiantes con el TFG a medias. Nombrarla ahora me compra su atención toda la charla.</p>
@@ -252,9 +252,9 @@ José Luis Cañadas Reche · idealista
 <p>No sube el <strong>techo</strong>.</p>
 </div>
 <aside class="notes">
-<p>El suelo: lo que antes no hacías por pereza, por falta de tiempo, o porque montar la infraestructura costaba más que el análisis.</p>
-<p>El techo: la calidad máxima de lo que produces. Sigue donde estaba: en lo que sabes.</p>
-<p>Anuncio el recorrido: tres sitios donde uso la IA con R. El trabajo, el aula y la piscina.</p>
+<p>El suelo: Por mi cabeza pueden pasan muchas ideas, lo normal es que el 80 o 90 % las descarte, por pereza, por tiempo, por desconocimiento de como montar algo, o de cómo se implementa en uno u otro lenguaje</p>
+<p>El techo: Saber interpretar lo que sale, el análisis critico. Sigue donde estaba, en lo que sabes por experiencia o formación</p>
+<p>Tres sitios donde uso la IA con R. El trabajo, el aula y la piscina.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -270,7 +270,7 @@ José Luis Cañadas Reche · idealista
 <section id="el-método" class="slide level2 center">
 <h2>El método</h2>
 <div class="r-fit-text">
-<p>Yo <strong>dirijo</strong> → ella <strong>programa</strong> → yo <strong>verifico</strong></p>
+<p>Yo <strong>dirijo</strong> → ella <strong>programa</strong> y discutimos mucho → yo <strong>verifico</strong></p>
 </div>
 <aside class="notes">
 <p>No es “le pido código y lo pego”.</p>
@@ -295,15 +295,14 @@ José Luis Cañadas Reche · idealista
 <h3 id="claude-code">Claude Code</h3>
 <p>Agente en terminal</p>
 <ul>
-<li>Lee y escribe ficheros del repo</li>
-<li>Ejecuta R, bash, python, lo que sea e itera solo</li>
-<li>Es lo que hace posible el flujo de los <code>.qmd</code></li>
+<li>Lee y escribe ficheros de mi ordenador, consulta la web.</li>
+<li>Ejecuta R, bash, python, julia, sql, lo que sea</li>
 </ul>
 </div><div class="column" style="width:50%;">
 <h3 id="posit-ai-en-positron">Posit AI en Positron</h3>
 <p><strong>20 €/mes</strong></p>
 <ul>
-<li>Varios modelos. Yo uso mucho glm 5.3</li>
+<li>Varios modelos. Yo uso mucho glm 5.3 Flash. Bueno, bonito y barato</li>
 <li>Integrado en <strong>Positron y RStudio</strong></li>
 <li><strong>Lee del REPL</strong>: ve tu sesión</li>
 <li>No hay que irse a la terminal</li>
@@ -318,7 +317,7 @@ José Luis Cañadas Reche · idealista
 <p><strong>Nota</strong></p>
 </div>
 <div class="callout-content">
-<p>Si sois analistas y no vivís en la terminal, <strong>esta segunda es la que os recomiendo</strong>: vive dentro del IDE donde ya trabajáis.</p>
+<p>Si sois analistas y no vivís en la terminal (aunque deberíais ), <strong>esta segunda es la que os recomiendo</strong>: vive dentro del IDE donde ya trabajáis.</p>
 </div>
 </div>
 </div>
@@ -331,25 +330,25 @@ José Luis Cañadas Reche · idealista
 </section>
 <section id="el-problema-no-es-el-análisis" class="slide level2 smaller">
 <h2>El problema no es el análisis</h2>
-<p>Es que <strong>el mismo análisis tiene dos audiencias incompatibles</strong>.</p>
+<p>Negocio me pedía una y otra vez comprobar lo mismo. Tenía que consultar BD, el modelo, etc.. Así que cree una skill de claude enseñando lo que quería hacer y cómo.</p>
+<p>Pero **el mismo análisis tenía dos audiencias distintas*.</p>
 <div class="columns">
 <div class="column" style="width:50%;">
-<h3 id="equipo-técnico-repo">Equipo técnico → repo</h3>
-<p>El código, los supuestos, el detalle reproducible</p>
+<h3 id="equipo-técnico-yo-mismo-repo">Equipo técnico (yo mismo ) → repo</h3>
+<p>El código, los supuestos, el detalle reproducible, para ver si la había cagado</p>
 </div><div class="column" style="width:50%;">
 <h3 id="negocio-confluence">Negocio → Confluence</h3>
-<p>La conclusión, el gráfico, y ni una línea de R</p>
+<p>La conclusión, el gráfico, las comparativas, y ni una línea de R, ni se sql,</p>
 </div></div>
 <div class="fragment">
-<p>Antes: escribir el análisis una vez y <strong>traducirlo a mano otra vez</strong>.</p>
-<p>Y la segunda versión, con prisa, se hacía mal o no se hacía.</p>
+<p>Antes: Hacer el análisis y luego ponerlo en “bonito”, y muchas veces, solo hacía lo primero</p>
 </div>
 </section>
 <section id="el-flujo-real" class="slide level2 smaller">
 <h2>El flujo real</h2>
 <ol type="1">
 <li><strong>Yo decido</strong> el análisis y le digo <strong>que sea en R</strong> <em>(o python o sql o lo que sea, no hay miedo)</em></li>
-<li><strong>Ella escribe</strong> el <code>.qmd</code></li>
+<li><strong>Ella, (¿estoy humanizando?) escribe</strong> el <code>.qmd</code></li>
 <li><strong>Yo verifico los resultados</strong> — no el estilo del código</li>
 <li>Le pido <strong>dos salidas del mismo documento</strong>: técnica para el repo, negocio para Confluence</li>
 </ol>
@@ -441,6 +440,7 @@ José Luis Cañadas Reche · idealista
 <h2>Qué puso el estadístico</h2>
 <p><strong>Decidir</strong> qué se calcula, con qué método y con qué supuestos.</p>
 <p><strong>Comprobar</strong> que el resultado es correcto.</p>
+<p><strong>Skill</strong> tuve que reenseñar como hacerlo</p>
 <div class="fragment">
 <p>La IA subió el suelo en la parte que odiaba —la segunda versión del documento, la que antes no se hacía— y <strong>no tocó el techo</strong>.</p>
 </div>
@@ -448,15 +448,14 @@ José Luis Cañadas Reche · idealista
 <section>
 <section id="el-aula" class="title-slide slide level1 center" data-background-color="#1a3a5c">
 <h1>2 · El aula</h1>
-<p>Un simulador de encuestas electorales</p>
+<p>Con un amigo mío profe, discutíamos sobre como enseñar muestreo. Y de ahí en una tarde surgió el simulador de encuestas electorales</p>
 </section>
 <section id="explicar-lo-difícil-de-explicar" class="slide level2">
 <h2>Explicar lo difícil de explicar</h2>
 <blockquote>
 <p>¿Por qué dos encuestas <strong>honestas y bien hechas</strong> dan resultados distintos?</p>
 </blockquote>
-<p>Es de las cosas más difíciles de enseñar con palabras.</p>
-<p>Y de las más fáciles de enseñar con <strong>una barra que se mueve</strong>.</p>
+<p>Es un concepto importante pero díficil dde contar en una clase. Con unos <strong>dibujitos</strong> se entiende a la primera</p>
 <div class="fragment">
 <div class="callout callout-warning callout-titled callout-style-default">
 <div class="callout-body">
@@ -476,10 +475,10 @@ José Luis Cañadas Reche · idealista
 </section>
 <section id="qué-me-dio-la-ia" class="slide level2 smaller">
 <h2>Qué me dio la IA</h2>
-<p>Toda la carpintería de Shiny: reactividad, layout, sliders, gráficos, el pulido.</p>
+<p>Toda la fontanería, la que yo elegí: Shiny con reactividad, layout, sliders, gráficos, el pulido.</p>
 <p>Horas de trabajo que <strong>no son estadística</strong>.</p>
 <div class="fragment">
-<p>Y que son exactamente la razón por la que muchos docentes nunca llegan a construir su material interactivo.</p>
+<p>Y que es la razón por la que muchos docentes nunca llegan a construir su material interactivo.</p>
 </div>
 <div class="fragment">
 <div class="r-fit-text">
@@ -661,11 +660,11 @@ José Luis Cañadas Reche · idealista
 </section>
 <section id="la-cocina" class="slide level2 smaller">
 <h2>La <strong>cocina</strong></h2>
-<p>Donde de verdad <strong>se decide el titular</strong>: ponderar y modelizar.</p>
+<p>Lo que antes hacía el CIs muy bien y ahora un poquito menos bien: ponderar y modelizar.</p>
 <div class="fragment">
 <ul>
 <li>La ponderación post-estratificación <strong>ya está en la app</strong>. Corrige la no respuesta.</li>
-<li>Lo siguiente, varias encuestas y MRP, está en el blog:</li>
+<li>Modelar y con varias encuestas y MRP, está en el blog:</li>
 </ul>
 <p><a href="https://muestrear-no-es-pecado.es/2026/11/mrp-multiencuesta/">MRP con varias encuestas (I): nueve encuestas y una tabla de postestratificación</a></p>
 <aside class="notes">
@@ -703,7 +702,7 @@ José Luis Cañadas Reche · idealista
 </tr>
 </tbody>
 </table>
-<p>Meta-análisis, escaños, MRP, modelo bayesiano completo. Todos con IA.</p>
+<p>Meta-análisis, escaños, MRP, modelo bayesiano completo. Todos asistido con IA, antes me habría llevado semanas hacerlo.</p>
 <div class="fragment">
 <p>¿Es la IA o son las generales del 29-N?</p>
 <p><strong>Soy estadístico: no puedo separar los dos efectos.</strong></p>
@@ -722,8 +721,8 @@ José Luis Cañadas Reche · idealista
       }</style></aside>
 </div>
 </section>
-<section id="qué-puso-el-estadístico-el-diseño" class="slide level2 smaller">
-<h2>Qué puso el estadístico: el <strong>diseño</strong></h2>
+<section id="qué-puse-yo-como-estadístico-el-diseño" class="slide level2 smaller">
+<h2>Qué puse yo como estadístico: el <strong>diseño</strong></h2>
 <p>El muestreo estaba bien. El error estaba en una definición que sonaba perfecta.</p>
 <div class="fragment">
 <p><strong>Qué sesgos merece la pena simular. Cómo se formalizan. Qué tiene que ver el alumno en pantalla para que le haga clic.</strong></p>
@@ -743,8 +742,8 @@ José Luis Cañadas Reche · idealista
 </section>
 <section id="un-análisis-que-no-le-importa-a-nadie" class="slide level2">
 <h2>Un análisis que no le importa a nadie</h2>
-<p>Años de sesiones de natación registradas por el reloj.</p>
-<p>Nunca las había analizado en serio.</p>
+<p>Nado desde hace un año y pico. El reloj mide desde finales de diciembre de 2025.</p>
+<p>190 sesiones que nunca habría analizado en serio.</p>
 <div class="fragment">
 <p>No le importa a nadie. No lo paga nadie. No cabe en un fin de semana.</p>
 </div>
@@ -760,7 +759,7 @@ José Luis Cañadas Reche · idealista
      y sorprendente, mejor: aquí el público está relajado y es cuando más se
      acuerdan de lo que dices -->
 <img data-src="img/natacion-app.png" style="width:80.0%" alt="Panel Shiny 'Mi Garmin – Natación' con 190 sesiones y 139,6 km en el último año, y gráficos de brazadas y ritmo por sesión" class="r-stretch"><aside class="notes">
-<p>Periodo del panel: 2025-11-02 a 2026-11-02. 190 sesiones, 139,6 km, 57 h 21 min de tiempo activo. https://canadasreche.shinyapps.io/mi-garmin-dashboard/</p>
+<p>Datos del reloj desde finales de diciembre de 2025 (el filtro del panel dice 2025-11-02 a 2026-11-02). 190 sesiones, 139,6 km, 57 h 21 min de tiempo activo. https://canadasreche.shinyapps.io/mi-garmin-dashboard/</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -788,7 +787,7 @@ José Luis Cañadas Reche · idealista
 <p><img data-src="img/natacion-respuesta.png" style="width:85.0%" alt="El panel responde: compara la sesión del 24 de octubre de 2026, 1050 m a 2:32 por 100 m, con la del 10 de octubre de 2026, 50 m a 1:52 por 100 m, y abre la pestaña Comparar"></p>
 <aside class="notes">
 <p>Dentro del panel hay un modelo de IA (jev). No escribe texto: decide una acción sobre el propio dashboard. Pone filtros, elige sesiones y cambia de pestaña. Aquí ha ido a “Comparar” y ha rellenado la sesión A y la B.</p>
-<p>Contraseña y límite de 10 preguntas por sesión, para que no me arruinen.</p>
+<p>Contraseña y límite de 10 preguntas por sesión, que JEV es barato, pero por si acaso</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;

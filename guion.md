@@ -314,7 +314,7 @@ El muestreo estaba bien; el error estaba en la definición de cobertura (diaposi
 
 Nada importante. Y ese es justamente el argumento.
 
-Tienes años de sesiones de natación registradas por el reloj. Nunca las habías analizado en serio porque el análisis no le importa a nadie, no lo paga nadie y no cabe en un fin de semana.
+Nadas desde hace un año y pico, y el reloj mide desde finales de diciembre de 2025: 190 sesiones hasta el 2 nov 2026. Nunca las habrías analizado en serio porque el análisis no le importa a nadie, no lo paga nadie y no cabe en un fin de semana.
 
 ### Qué me dio la IA
 

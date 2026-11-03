@@ -39,7 +39,7 @@ format:
 ::: {.r-fit-text}
 Si escribe el código por mí,
 
-**¿para qué me sirve saber estadística?**
+**¿Me sirve entonces de algo,  saber estadística?**
 :::
 
 ::: {.notes}
@@ -58,19 +58,20 @@ No sube el **techo**.
 :::
 
 ::: {.notes}
-El suelo: lo que antes no hacías por pereza, por falta de tiempo, o porque
-montar la infraestructura costaba más que el análisis.
 
-El techo: la calidad máxima de lo que produces. Sigue donde estaba: en lo que sabes.
+El suelo: Por mi cabeza pueden pasan muchas ideas, lo normal es que el 80 o 90 % las descarte, por pereza, 
+por tiempo, por desconocimiento de como montar algo, o de cómo se implementa en uno u otro lenguaje
 
-Anuncio el recorrido: tres sitios donde uso la IA con R. El trabajo, el aula
+El techo: Saber interpretar lo que sale, el análisis critico. Sigue donde estaba, en lo que sabes por experiencia o formación 
+
+Tres sitios donde uso la IA con R. El trabajo, el aula
 y la piscina.
 :::
 
 ## El método {.center}
 
 ::: {.r-fit-text}
-Yo **dirijo** → ella **programa** → yo **verifico**
+Yo **dirijo** → ella **programa** y discutimos mucho → yo **verifico**
 :::
 
 ::: {.notes}
@@ -90,15 +91,15 @@ siguen siendo míos.
 ### Claude Code
 Agente en terminal
 
-- Lee y escribe ficheros del repo
-- Ejecuta R, bash, python, lo que sea e itera solo
-- Es lo que hace posible el flujo de los `.qmd`
+- Lee y escribe ficheros de mi ordenador, consulta la web. 
+- Ejecuta R, bash, python, julia, sql, lo que sea
+
 :::
 ::: {.column width="50%"}
 ### Posit AI en Positron
 **20 €/mes**
 
-- Varios modelos. Yo uso mucho glm 5.3
+- Varios modelos. Yo uso mucho glm 5.3 Flash. Bueno, bonito y barato
 - Integrado en **Positron y RStudio**
 - **Lee del REPL**: ve tu sesión
 - No hay que irse a la terminal
@@ -106,7 +107,7 @@ Agente en terminal
 :::
 
 ::: {.callout-note}
-Si sois analistas y no vivís en la terminal, **esta segunda es la que os
+Si sois analistas y no vivís en la terminal (aunque deberíais ), **esta segunda es la que os
 recomiendo**: vive dentro del IDE donde ya trabajáis.
 :::
 
@@ -118,29 +119,30 @@ Informes `.qmd` analíticos y el informe catastral
 
 ## El problema no es el análisis {.smaller}
 
-Es que **el mismo análisis tiene dos audiencias incompatibles**.
+Negocio me pedía una y otra vez comprobar lo mismo. Tenía que consultar BD, el modelo, etc..
+Así que cree una skill de claude enseñando lo que quería hacer y cómo. 
+
+Pero **el mismo análisis tenía dos audiencias distintas*.
 
 ::: {.columns}
 ::: {.column width="50%"}
-### Equipo técnico → repo
-El código, los supuestos, el detalle reproducible
+### Equipo técnico (yo mismo ) → repo
+El código, los supuestos, el detalle reproducible, para ver si la había cagado
 :::
 ::: {.column width="50%"}
 ### Negocio → Confluence
-La conclusión, el gráfico, y ni una línea de R
+La conclusión, el gráfico, las comparativas,  y ni una línea de R, ni se sql, 
 :::
 :::
 
 . . .
 
-Antes: escribir el análisis una vez y **traducirlo a mano otra vez**.
-
-Y la segunda versión, con prisa, se hacía mal o no se hacía.
+Antes: Hacer el análisis y luego ponerlo en "bonito", y muchas veces, solo hacía lo primero
 
 ## El flujo real {.smaller}
 
 1. **Yo decido** el análisis y le digo **que sea en R** *(o python o sql o lo que sea, no hay miedo)*
-2. **Ella escribe** el `.qmd`
+2. **Ella, (¿estoy humanizando?) escribe** el `.qmd`
 3. **Yo verifico los resultados** — no el estilo del código
 4. Le pido **dos salidas del mismo documento**: técnica para el repo, negocio para Confluence
 
@@ -186,7 +188,9 @@ Gráfico generado con `scripts/grafico_informe_catastral.R` (mismo que Málaga).
 ## Error real
 En una tabla, las filas cambiaron de orden.
 
-Los totales de Andalucía no cuadraban.
+Los totales de Andalucía no cuadraban. 
+
+
 :::
 
 ::: {.notes}
@@ -202,6 +206,7 @@ El código compilaba.
 El informe era bonito.
 
 **El número estaba mal.**
+
 :::
 
 . . .
@@ -214,6 +219,9 @@ Nadie de negocio lo habría notado.
 
 **Comprobar** que el resultado es correcto.
 
+**Skill** tuve que reenseñar como hacerlo
+
+
 . . .
 
 La IA subió el suelo en la parte que odiaba —la segunda versión del documento,
@@ -221,15 +229,16 @@ la que antes no se hacía— y **no tocó el techo**.
 
 # 2 · El aula {background-color="#1a3a5c"}
 
-Un simulador de encuestas electorales
+Con un amigo mío profe, discutíamos sobre como enseñar muestreo. Y de ahí en una tarde surgió el  simulador de encuestas electorales
 
 ## Explicar lo difícil de explicar
 
 > ¿Por qué dos encuestas **honestas y bien hechas** dan resultados distintos?
 
-Es de las cosas más difíciles de enseñar con palabras.
+Es un concepto importante pero díficil dde contar en una clase.
+Con unos **dibujitos** se entiende a la primera 
 
-Y de las más fáciles de enseñar con **una barra que se mueve**.
+
 
 . . .
 
@@ -242,13 +251,13 @@ El error que os enseñaré no está en el muestreo.
 
 ## Qué me dio la IA {.smaller}
 
-Toda la carpintería de Shiny: reactividad, layout, sliders, gráficos, el pulido.
+Toda la fontanería, la que yo elegí: Shiny con reactividad, layout, sliders, gráficos, el pulido. 
 
 Horas de trabajo que **no son estadística**.
 
 . . .
 
-Y que son exactamente la razón por la que muchos docentes nunca llegan a
+Y que es la razón por la que muchos docentes nunca llegan a
 construir su material interactivo.
 
 . . .
@@ -430,12 +439,13 @@ Solo lo ve quien sabe qué es una cobertura.
 
 ## La **cocina** {.smaller}
 
-Donde de verdad **se decide el titular**: ponderar y modelizar.
+Lo que antes hacía el CIs muy bien y ahora un poquito menos bien:
+ponderar y modelizar.
 
 . . .
 
 - La ponderación post-estratificación **ya está en la app**. Corrige la no respuesta.
-- Lo siguiente, varias encuestas y MRP, está en el blog:
+- Modelar y  con varias encuestas y MRP, está en el blog:
 
 [MRP con varias encuestas (I): nueve encuestas y una tabla de postestratificación](https://muestrear-no-es-pecado.es/2026/11/mrp-multiencuesta/)
 
@@ -454,7 +464,7 @@ Parte II del MRP: https://muestrear-no-es-pecado.es/2026/11/mrp-multiencuesta/ii
 | Enero a septiembre de 2026 (9 meses) | 7 |
 | Octubre de 2026 (1 mes) | **7** |
 
-Meta-análisis, escaños, MRP, modelo bayesiano completo. Todos con IA.
+Meta-análisis, escaños, MRP, modelo bayesiano completo. Todos asistido con IA, antes me habría llevado semanas hacerlo. 
 
 . . .
 
@@ -470,7 +480,7 @@ El chiste es serio: hay una variable de confusión, las elecciones.
 Es el suelo subiendo, y también un ejemplo de interpretar.
 :::
 
-## Qué puso el estadístico: el **diseño** {.smaller}
+## Qué puse yo como estadístico: el **diseño** {.smaller}
 
 El muestreo estaba bien. El error estaba en una definición que sonaba perfecta.
 
@@ -497,9 +507,9 @@ Mis datos de natación del Garmin
 
 ## Un análisis que no le importa a nadie
 
-Años de sesiones de natación registradas por el reloj.
+Nado desde hace un año y pico. El reloj mide desde finales de diciembre de 2025.
 
-Nunca las había analizado en serio.
+190 sesiones que nunca habría analizado en serio.
 
 . . .
 
@@ -520,7 +530,7 @@ Descarga, limpieza de los datos del Garmin, exploración, gráficos. Y un panel.
      acuerdan de lo que dices -->
 
 ::: {.notes}
-Periodo del panel: 2025-11-02 a 2026-11-02. 190 sesiones, 139,6 km,
+Datos del reloj desde finales de diciembre de 2025 (el filtro del panel dice 2025-11-02 a 2026-11-02). 190 sesiones, 139,6 km,
 57 h 21 min de tiempo activo.
 https://canadasreche.shinyapps.io/mi-garmin-dashboard/
 :::
@@ -548,7 +558,7 @@ Dentro del panel hay un modelo de IA (jev). No escribe texto: decide una
 acción sobre el propio dashboard. Pone filtros, elige sesiones y cambia de
 pestaña. Aquí ha ido a "Comparar" y ha rellenado la sesión A y la B.
 
-Contraseña y límite de 10 preguntas por sesión, para que no me arruinen.
+Contraseña  y límite de 10 preguntas por sesión, que JEV es barato, pero por si acaso
 :::
 
 ## Qué puso el estadístico: **interpretar** {.smaller}
