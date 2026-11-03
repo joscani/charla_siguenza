@@ -122,7 +122,7 @@ Informes `.qmd` analíticos y el informe catastral
 Negocio me pedía una y otra vez comprobar lo mismo. Tenía que consultar BD, el modelo, etc..
 Así que cree una skill de claude enseñando lo que quería hacer y cómo. 
 
-Pero **el mismo análisis tenía dos audiencias distintas*.
+Pero **el mismo análisis tenía dos audiencias distintas**
 
 ::: {.columns}
 ::: {.column width="50%"}
@@ -663,7 +663,7 @@ sabe qué número esperar.
 ::: {.columns}
 ::: {.column width="50%"}
 ### Bien
-- Carpintería: Shiny, Quarto, boilerplate, docs
+- fontaneria : Shiny, Quarto, boilerplate, docs
 - Traducir entre formatos y audiencias
 - Bajar el coste de **empezar** algo
 - Hacer posible lo que no compensaba
@@ -709,7 +709,7 @@ enseñando **estadística**
 
 <br>
 
-Si la carpintería la hace la máquina, lo único que te distingue es el criterio.
+Si la fontaneria  la hace la máquina, lo único que te distingue es el criterio.
 
 Que es lo que se enseña aquí.
 
