@@ -30,3 +30,6 @@ logs/
 
 # SO
 .DS_Store
+
+# Informe confidencial: no subir
+informe_catastral.html

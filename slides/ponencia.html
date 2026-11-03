@@ -144,7 +144,7 @@ José Luis Cañadas Reche · idealista
 </div>
 </div>
 
-  <p class="date">19 de noviembre de 2026</p>
+  <p class="date">20 de noviembre de 2026</p>
 </section>
 <section id="josé-luis-cañadas-reche" class="slide level2 smaller">
 <h2>José Luis Cañadas Reche</h2>
@@ -157,7 +157,6 @@ José Luis Cañadas Reche · idealista
 </ul>
 </div><div class="column" style="width:40%;">
 <p><img data-src="img/foto.jpg" style="width:80.0%"></p>
-<!-- TODO(JL): copiar aquí la foto del proyecto -->
 </div></div>
 </section>
 <section id="section" class="slide level2 center">
@@ -167,7 +166,7 @@ José Luis Cañadas Reche · idealista
 <p><strong>¿para qué me sirve saber estadística?</strong></p>
 </div>
 <aside class="notes">
-<p>Es la pregunta que se está haciendo media sala. Y sobre todo los estudiantes con el TFG a medias. Nombrarla ahora me compra su atención 35 minutos.</p>
+<p>Es la pregunta que se está haciendo media sala. Y sobre todo los estudiantes con el TFG a medias. Nombrarla ahora me compra su atención toda la charla.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -291,7 +290,9 @@ José Luis Cañadas Reche · idealista
 <!-- TODO(JL): ¿cómo resuelves las dos versiones? params de Quarto, perfiles,
      chunks condicionales... Concrétalo: es lo que la gente va a querer copiar -->
 <aside class="notes">
-<p>El informe catastral es el mejor ejemplo. Recuperar slides de charla granada TODO: una frase de qué es y por qué era buen candidato.</p>
+<p>El informe catastral es el mejor ejemplo. Recuperar slides de charla granada.</p>
+<p>Qué es: le das una referencia catastral y compara lo que predice nuestro modelo de valoración (AVM) para esa vivienda con los anuncios comparables de su zona, mes a mes, desde enero de 2025.</p>
+<p>Por qué era buen candidato: se repite para muchas referencias, siempre con la misma estructura, y lo leen técnicos y negocio.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -308,9 +309,21 @@ José Luis Cañadas Reche · idealista
 <h2></h2>
 <h3 id="el-informe-catastral">El informe catastral</h3>
 
-<!-- TODO(JL): captura revisada por confidencialidad. Si hace falta, ofusca
-     las cifras y quédate con la estructura del documento -->
-<img data-src="img/empresa-informe.png" class="r-stretch"></section>
+<img data-src="img/empresa-informe.png" style="width:95.0%" alt="Evolución trimestral de 2025 a 2026 del precio que predice el modelo para una vivienda frente a la mediana de los anuncios comparables. Sin eje de euros." class="r-stretch"><p><em>Una vivienda real. Sin euros, sin zona.</em></p>
+<aside class="notes">
+<p>Modelo: predicción del AVM para esa referencia catastral, por trimestre (columna price_model_cadastre del informe). Mercado: mediana trimestral del precio de los anuncios comparables de la zona. Gráfico generado con <code>scripts/grafico_informe_catastral.R</code> (mismo que Málaga).</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="dónde-está-el-techo-verificar" class="slide level2 smaller">
 <h2>Dónde está el techo: <strong>verificar</strong></h2>
 <!-- TODO(JL): 1-2 errores REALES de la IA. Los mejores son del tipo:
@@ -326,13 +339,27 @@ José Luis Cañadas Reche · idealista
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Error 1</strong></p>
+<p><strong>Error real</strong></p>
 </div>
 <div class="callout-content">
-<p><em>Cambio de orden en filas de una tabla html de plotly Datos de Andalucía totales no cuadraban</em></p>
+<p>En una tabla, las filas cambiaron de orden.</p>
+<p>Los totales de Andalucía no cuadraban.</p>
 </div>
 </div>
 </div>
+<aside class="notes">
+<p>Sin capturas: el informe es confidencial. Lo cuento. Lo vi yo porque sabía qué total esperaba.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 <div class="fragment">
 <div class="r-fit-text">
 <p>El código compilaba.</p>
@@ -374,7 +401,8 @@ José Luis Cañadas Reche · idealista
 <p><strong>Que quede claro</strong></p>
 </div>
 <div class="callout-content">
-<p><strong>La app muestrea correctamente.</strong> No es un ejemplo de la IA equivocándose. Es una herramienta docente que funciona.</p>
+<p><strong>La app muestrea correctamente.</strong> Es una herramienta docente que funciona.</p>
+<p>El error que os enseñaré no está en el muestreo.</p>
 </div>
 </div>
 </div>
@@ -392,6 +420,19 @@ José Luis Cañadas Reche · idealista
 <p>La barrera para que un profesor tenga</p>
 <p>su propio simulador <strong>acaba de desaparecer</strong></p>
 </div>
+<aside class="notes">
+<p>Cómo lo construí, contado en el blog (8 mar 2026): https://muestrear-no-es-pecado.es/2026/03/sim_encuestas_claude_code.html</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </div>
 </section>
 <section id="demo" class="slide level2 center" data-background-color="#0f2233">
@@ -400,14 +441,15 @@ José Luis Cañadas Reche · idealista
 <p>Tres ejemplos</p>
 </div>
 <aside class="notes">
-<p>GUION CERRADO. 4 minutos. Nada de explorar en directo. https://canadasreche.shinyapps.io/sim-encuestas-electorales/</p>
+<p>GUION CERRADO. 10 minutos. Detalle completo en guion.md. https://canadasreche.shinyapps.io/sim-encuestas-electorales/ Antes: app abierta, una ejecución hecha, zoom 125 %, n = 1.200, 500 réplicas.</p>
 <ol start="0" type="1">
-<li><p>Población simulada, respetando distribuciones reales.</p></li>
-<li><p>Tamaño de muestra y margen de error. Uso diferentes muestras, tengo población simulada, puedo hacerlo , soy omnipotente</p></li>
-<li><p>Sesgo de no respuesta. La realidad no ha cambiado. El muestreo sigue siendo correcto. Y la estimación se desplaza. &lt;- aquí se hace el silencio.</p></li>
-<li><p>Votante oculto. Declaran algo distinto de lo que votan.</p></li>
+<li>POBLACIÓN (1 min). Pestaña Población, gráfico de voto por edad. “España inventada. Conozco el voto de todos.” Jóvenes: más Sumar y Vox.</li>
+<li>N (2,5 min). n = 400, Ejecutar, Distribuciones PP. Luego n = 4.000. OJO: el eje se reajusta solo. Señalar los números: 27-37 frente a 30-34. “10 veces más entrevistas, la dispersión baja a la tercera parte.”</li>
+<li>NO RESPUESTA (2,5 min). n = 1.200, marcar no respuesta, Ejecutar. Resultados Agregados: n efectivo ~800; PP y PSOE arriba, Vox y Sumar abajo. “El problema no es a quién llamas, es quién te coge el teléfono.” Silencio.</li>
+<li>PONDERAR (1,5 min). Marcar ponderación. Tarda ~40 s: explicar mientras. Sesgo del PP vuelve a ~0; la SD sube.</li>
+<li>VOTANTE OCULTO (2 min). Desmarcar no respuesta y ponderación, marcar deseabilidad. Distribuciones, Vox. Línea roja en la cola. “Más muestra no lo arregla.”</li>
 </ol>
-<p>PLAN B: si no arranca en 15 segundos, paso a la siguiente diapositiva.</p>
+<p>PLAN B: si no arranca en 15 s, o una simulación se cuelga, paso a las capturas.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -420,32 +462,21 @@ José Luis Cañadas Reche · idealista
           display:block!important;
       }</style></aside>
 </section>
-<section id="plan-b" class="slide level2" data-visibility="uncounted">
-<h2>Plan B</h2>
-<!-- TODO(JL): grabar tres clips de 30-60 s y ponerlos aquí.
-     Si la app no arranca en 15 segundos, avanzo a esta diapositiva
-     y nadie se entera. Ensayar así al menos una vez. -->
-<div class="panel-tabset">
-<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">n y margen de error</a></li><li><a href="#tabset-1-2">No respuesta</a></li><li><a href="#tabset-1-3">Votante oculto</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1">
-<p><video data-src="img/demo-n.mp4" controls=""><a href="img/demo-n.mp4">Video</a></video></p>
-</div>
-<div id="tabset-1-2">
-<p><video data-src="img/demo-norespuesta.mp4" controls=""><a href="img/demo-norespuesta.mp4">Video</a></video></p>
-</div>
-<div id="tabset-1-3">
-<p><video data-src="img/demo-oculto.mp4" controls=""><a href="img/demo-oculto.mp4">Video</a></video></p>
-</div>
-</div>
-</div>
-</section>
-<section id="lo-que-todavía-no-está-la-cocina" class="slide level2">
-<h2>Lo que todavía no está: la <strong>cocina</strong></h2>
-<p>Ponderación y recuerdo de voto.</p>
-<p>Que es donde de verdad <strong>se decide el titular</strong>.</p>
+<section id="plan-b-1.-tamaño-de-muestra" class="slide level2 smaller" data-visibility="uncounted">
+<h2>Plan B · 1. Tamaño de muestra</h2>
+<p>500 encuestas simuladas sobre la misma población. Estimación del PP.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>n = 400</strong></p>
+<p><img data-src="img/encuesta-n400.png" alt="Histograma de 500 estimaciones del PP con n igual a 400, entre 27 y 37 por ciento"></p>
+</div><div class="column" style="width:50%;">
+<p><strong>n = 4.000</strong></p>
+<p><img data-src="img/encuesta-n4000.png" alt="Histograma de 500 estimaciones del PP con n igual a 4000, entre 30 y 34 por ciento, mismo eje"></p>
+</div></div>
+<div class="fragment">
+<p>10 veces más entrevistas. La dispersión solo baja a la tercera parte.</p>
 <aside class="notes">
-<p>Lo digo YO antes de que me lo pregunten. Convierte una carencia en una idea de futuro, y deja el gancho servido para el turno de preguntas.</p>
+<p>Mismo eje X en los dos (26 % a 38 %). Valor real del PP: 32,04 %. Desviación típica de las 500 estimaciones: 2,31 pp con n = 400 y 0,75 pp con n = 4.000. 2,31 / 0,75 = 3,1, que es casi raíz de 10 = 3,16. Probabilidad de acertar el ganador: 61 % con n = 400 y 79 % con n = 4.000.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -457,10 +488,177 @@ José Luis Cañadas Reche · idealista
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
+</div>
+</section>
+<section id="plan-b-2.-no-respuesta" class="slide level2 smaller" data-visibility="uncounted">
+<h2>Plan B · 2. No respuesta</h2>
+
+<img data-src="img/encuesta-norespuesta.png" style="width:85.0%" alt="Barras de voto real frente a estimado con sesgo de no respuesta por edad: PP y PSOE sobreestimados, Vox y Sumar infraestimados" class="r-stretch"><p>El muestreo es correcto. <strong>La realidad no ha cambiado.</strong> Y la estimación se mueve.</p>
+<aside class="notes">
+<p>Qué hace la app, en tres pasos: 1. Saca una muestra aleatoria simple de 1.200 personas. Esto está bien hecho. 2. Cada persona contesta o no según su edad: 40 % de 18-24, 50 % de 25-34, 60 % de 35-44, 70 % de 45-54, 80 % de 55-64 y 85 % de 65+. 3. Calcula el voto solo con los que contestan. Quedan unas 800 (un tercio no contesta).</p>
+<p>Por qué se mueve la estimación: - Los que contestan son más mayores que la población. - En la población simulada, los jóvenes votan más Vox y Sumar, y los mayores votan más PP y PSOE. - Resultado: la encuesta oye de más a los mayores. Sube PP y PSOE, baja Vox y Sumar.</p>
+<p>Cifras (estimado − real, en puntos): PP +0,81, PSOE +0,50, Vox −0,52, Sumar −0,71.</p>
+<p>La frase: nadie ha mentido y el muestreo es correcto. El problema no es a quién llamas, es quién te coge el teléfono.</p>
+<p>Cómo leer el gráfico: barra azul = voto real; naranja = media de las 500 encuestas. La rayita negra cubre el 95 % central de las 500 estimaciones (no es un intervalo de una sola encuesta).</p>
+<p>Si preguntan “¿y si pido más muestra?”: no se arregla. Con más n, las encuestas se equivocan igual, pero todas en el mismo sitio. El arreglo es ponderar por edad y sexo: lo enseño en “La cocina”.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="plan-b-3.-votante-oculto" class="slide level2 smaller" data-visibility="uncounted">
+<h2>Plan B · 3. Votante oculto</h2>
+
+<img data-src="img/encuesta-oculto-vox.png" style="width:85.0%" alt="Histograma de 500 estimaciones de Vox con sesgo de deseabilidad social: la media estimada, 9 por ciento, queda a la izquierda del valor real, 10,5 por ciento" class="r-stretch"><p>Casi todas las encuestas se quedan <strong>por debajo</strong> del valor real.</p>
+<aside class="notes">
+<p>Sesgo de deseabilidad social en Vox, n = 1.200, 500 réplicas. Real 10,50 %; media de las estimaciones 8,97 %; diferencia −1,53 puntos. El percentil 97,5 de las réplicas es 10,50 %: el valor real queda justo en el borde. Más muestra no lo arregla: el sesgo no baja con n.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="plan-b-los-escenarios-juntos" class="slide level2 smaller" data-visibility="uncounted">
+<h2>Plan B · Los escenarios juntos</h2>
+
+<img data-src="img/encuesta-escenarios.png" alt="Tabla de cuatro escenarios con n igual a 1200 y 500 réplicas: error medio absoluto y probabilidad de acertar el ganador" class="r-stretch"><aside class="notes">
+<p>MAE = media, sobre los 10 partidos y las 500 réplicas, de |estimado − real|, en puntos. El MAE apenas sube (0,55 a 0,73) porque promedia 10 partidos y 6 casi no se mueven. Ponderar corrige el sesgo (PP de +0,81 a −0,01) pero no baja el MAE (0,72): la varianza sube porque solo quedan 800 entrevistas efectivas. Capturas generadas con <code>scripts/capturas_simulador.R</code>.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="la-ayuda-sonaba-perfecta" class="slide level2 smaller">
+<h2>La Ayuda sonaba perfecta</h2>
+<p><img data-src="img/cobertura-ayuda.png" style="width:90.0%" alt="Texto de la Ayuda de la app: Cobertura, proporción de veces que el IC 95 % contiene el valor real, ideal 0,95"></p>
+<div class="fragment">
+<p><img data-src="img/cobertura-tabla.png" style="width:90.0%" alt="Tabla de resultados con votante oculto: Vox con sesgo de menos 1,61 puntos y cobertura 1"></p>
+</div>
+<div class="fragment">
+<p>Vox: sesgo de <strong>−1,6 puntos</strong> y cobertura <strong>1</strong>. Eso no puede ser.</p>
+<aside class="notes">
+<p>Lo escribió la IA, confirmado por mí. La Ayuda define cobertura bien, como en un libro. El código hace otra cosa: - Junta las 500 estimaciones y calcula UN solo intervalo: del percentil 2,5 al percentil 97,5. - Mira si el valor real cae dentro. Pone 1 si cae, 0 si no. Eso responde “¿el valor real es un resultado posible?”. No es una cobertura. Por eso Vox, con sesgo −1,6 puntos, sale con cobertura 1. Siguiente diapositiva: cómo se hace bien.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
+</section>
+<section id="la-cobertura-bien-calculada" class="slide level2 smaller">
+<h2>La cobertura, bien calculada</h2>
+
+<img data-src="img/cobertura-intervalos.png" style="width:95.0%" alt="Dos paneles con 50 intervalos de confianza del 95 por ciento para el voto a Vox. Sin sesgo, 482 de 500 contienen el valor real de 10,5 por ciento. Con votante oculto, solo 257 de 500" class="r-stretch"><p>Un intervalo <strong>por encuesta</strong>. Cuento cuántos tocan el valor real.</p>
+<aside class="notes">
+<p>Cómo se calcula bien, en tres pasos: 1. Cada encuesta da su estimación p y su IC 95 %: p ± 1,96 × raíz(p(1 − p) / n). 2. Miro si el valor real (10,5 %) cae dentro de ese intervalo. 3. Cobertura = intervalos que lo contienen / total de encuestas.</p>
+<p>Sin sesgo: 482 de 500 = 96 %. Lo que promete un IC del 95 %. Votante oculto: 257 de 500 = 51 %. Media de las encuestas que dicen “95 % de confianza” no contienen el valor real.</p>
+<p>La app pondría 1 en los dos casos.</p>
+<p>Método: simulación propia, no sale de la app. 500 encuestas de n = 1.200. Proporción declarada: 10,5 % sin sesgo; 8,9 % con votante oculto (la media que dio la app). Se dibujan 50 de las 500. Script: scripts/grafico_cobertura.R.</p>
+<p>Frase: el texto de la Ayuda era convincente. El número no significaba eso. Solo lo ve quien sabe qué es una cobertura.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="la-cocina" class="slide level2 smaller">
+<h2>La <strong>cocina</strong></h2>
+<p>Donde de verdad <strong>se decide el titular</strong>: ponderar y modelizar.</p>
+<div class="fragment">
+<ul>
+<li>La ponderación post-estratificación <strong>ya está en la app</strong>. Corrige la no respuesta.</li>
+<li>Lo siguiente, varias encuestas y MRP, está en el blog:</li>
+</ul>
+<p><a href="https://muestrear-no-es-pecado.es/2026/11/mrp-multiencuesta/">MRP con varias encuestas (I): nueve encuestas y una tabla de postestratificación</a></p>
+<aside class="notes">
+<p>Lo digo YO antes de que me lo pregunten. Dato de la demo: ponderar lleva el sesgo del PP de +0,81 a −0,01 puntos, pero el MAE no baja (0,73 a 0,72): quedan unas 800 entrevistas efectivas. Si preguntan por raking: https://muestrear-no-es-pecado.es/2026/10/mrp-raking/ Parte II del MRP: https://muestrear-no-es-pecado.es/2026/11/mrp-multiencuesta/ii-modelo.html</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
+</section>
+<section id="octubre-de-2026" class="slide level2 smaller">
+<h2>Octubre de 2026</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Periodo</th>
+<th>Posts en el blog</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Enero a septiembre de 2026 (9 meses)</td>
+<td>7</td>
+</tr>
+<tr class="even">
+<td>Octubre de 2026 (1 mes)</td>
+<td><strong>7</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Meta-análisis, escaños, MRP, modelo bayesiano completo. Todos con IA.</p>
+<div class="fragment">
+<p>¿Es la IA o son las generales del 29-N?</p>
+<p><strong>Soy estadístico: no puedo separar los dos efectos.</strong></p>
+<aside class="notes">
+<p>Método: posts por mes según el RSS del blog (blog.xml), consultado el 3 nov 2026. Enero 2026: 3 (Cachitos), marzo: 1, mayo: 2, julio: 1. Octubre: 7. Los de octubre son con IA asistida (lo sé yo, no lo dice el RSS). El chiste es serio: hay una variable de confusión, las elecciones. Es el suelo subiendo, y también un ejemplo de interpretar.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
 </section>
 <section id="qué-puso-el-estadístico-el-diseño" class="slide level2 smaller">
 <h2>Qué puso el estadístico: el <strong>diseño</strong></h2>
-<p>Aquí no hay ningún error de la IA que enseñar. Y por eso este bloque es interesante.</p>
+<p>El muestreo estaba bien. El error estaba en una definición que sonaba perfecta.</p>
 <div class="fragment">
 <p><strong>Qué sesgos merece la pena simular. Cómo se formalizan. Qué tiene que ver el alumno en pantalla para que le haga clic.</strong></p>
 <p>Eso no sale de un modelo. Sale de haber analizado encuestas y de haber intentado explicárselas a alguien.</p>
@@ -490,30 +688,110 @@ José Luis Cañadas Reche · idealista
 </section>
 <section id="qué-me-dio-la-ia-1" class="slide level2 smaller">
 <h2>Qué me dio la IA</h2>
-<p>Descarga, limpieza de los datos del Garmin, exploración, gráficos.</p>
+<p>Descarga, limpieza de los datos del Garmin, exploración, gráficos. Y un panel.</p>
+
 <!-- TODO(JL): 1-2 hallazgos concretos sobre tu natación. Cuanto más personal
      y sorprendente, mejor: aquí el público está relajado y es cuando más se
      acuerdan de lo que dices -->
-
-<img data-src="img/natacion.png" class="r-stretch"><div class="fragment">
+<img data-src="img/natacion-app.png" style="width:80.0%" alt="Panel Shiny 'Mi Garmin – Natación' con 190 sesiones y 139,6 km en el último año, y gráficos de brazadas y ritmo por sesión" class="r-stretch"><aside class="notes">
+<p>Periodo del panel: 2025-11-02 a 2026-11-02. 190 sesiones, 139,6 km, 57 h 21 min de tiempo activo. https://canadasreche.shinyapps.io/mi-garmin-dashboard/</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="section-3" class="slide level2 center">
+<h2></h2>
 <div class="r-fit-text">
 <p>Este es el caso donde <strong>el suelo sube más</strong></p>
 </div>
 <p>Un análisis que no se habría hecho jamás, ahora existe.</p>
 <p>No porque sea difícil: porque nunca habría merecido las horas.</p>
+</section>
+<section id="pregúntale-al-panel" class="slide level2 smaller">
+<h2>Pregúntale al panel</h2>
+<p><img data-src="img/natacion-pregunta.png" alt="Caja de texto con la pregunta: compara el ritmo de mi última sesión con la mejor sesión de todo el histórico"></p>
+<div class="fragment">
+<p><img data-src="img/natacion-respuesta.png" style="width:85.0%" alt="El panel responde: compara la sesión del 24 de octubre de 2026, 1050 m a 2:32 por 100 m, con la del 10 de octubre de 2026, 50 m a 1:52 por 100 m, y abre la pestaña Comparar"></p>
+<aside class="notes">
+<p>Dentro del panel hay un modelo de IA (jev). No escribe texto: decide una acción sobre el propio dashboard. Pone filtros, elige sesiones y cambia de pestaña. Aquí ha ido a “Comparar” y ha rellenado la sesión A y la B.</p>
+<p>Contraseña y límite de 10 preguntas por sesión, para que no me arruinen.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </div>
 </section>
 <section id="qué-puso-el-estadístico-interpretar" class="slide level2 smaller">
 <h2>Qué puso el estadístico: <strong>interpretar</strong></h2>
-<p>Los gráficos salen solos.</p>
-<p>Saber si esa mejora <strong>es una mejora</strong> —o es que ese mes nadé menos series largas— no.</p>
-<!-- TODO(JL): el ejemplo concreto. Idealmente uno donde el gráfico sugiere
-     una cosa y la explicación real es otra -->
+<p>El panel contestó <strong>exactamente</strong> lo que le pregunté.</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th></th>
+<th>Última sesión</th>
+<th>“La mejor”</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Fecha</td>
+<td>24 oct 2026</td>
+<td>10 oct 2026</td>
+</tr>
+<tr class="even">
+<td>Distancia</td>
+<td>1050 m</td>
+<td><strong>50 m</strong></td>
+</tr>
+<tr class="odd">
+<td>Tiempo activo</td>
+<td>27 min</td>
+<td><strong>1 min</strong></td>
+</tr>
+<tr class="even">
+<td>Ritmo</td>
+<td>2:32 /100 m</td>
+<td>1:52 /100 m</td>
+</tr>
+</tbody>
+</table>
+<div class="fragment">
+<p>La “mejor sesión” es <strong>un largo</strong>. Comparo un esprint con una sesión entera.</p>
+<p>La pregunta buena era otra: <em>la mejor sesión de más de 1000 m</em>.</p>
+</div>
 <div class="fragment">
 <div class="r-fit-text">
-<p>La respuesta llegó en diez minutos.</p>
+<p>La respuesta llegó en diez segundos.</p>
 <p><strong>La pregunta la puse yo.</strong></p>
 </div>
+<aside class="notes">
+<p>Nadie se equivocó: la IA tomó “mejor” como “ritmo más bajo”, que es lo que dije. Lo que faltaba es lo que sabe un estadístico: comparar cosas comparables. Si le pongo un mínimo de distancia, la comparación ya tiene sentido. <!-- TODO(JL): probar la pregunta con "de más de 1000 m" y, si sale bien, captura --></p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </div>
 </section></section>
 <section>
@@ -554,14 +832,14 @@ José Luis Cañadas Reche · idealista
 <p>La primera y la tercera son <strong>enteramente tuyas</strong>.</p>
 </div>
 </section>
-<section id="section-3" class="slide level2 center">
+<section id="section-4" class="slide level2 center">
 <h2></h2>
 <div class="r-fit-text">
 <p>La IA sube el suelo.</p>
 <p><strong>El techo lo sigues poniendo tú.</strong></p>
 </div>
 </section>
-<section id="section-4" class="slide level2 center smaller">
+<section id="section-5" class="slide level2 center smaller">
 <h2></h2>
 <div class="r-fit-text">
 <p>Por eso hay que seguir</p>

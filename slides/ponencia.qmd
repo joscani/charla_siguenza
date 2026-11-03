@@ -2,7 +2,7 @@
 title: "Cómo usa la IA un estadístico erre-ro"
 subtitle: "Del trabajo a la piscina pasando por el aula"
 author: "José Luis Cañadas Reche · idealista"
-date: "2026-11-19"
+date: "2026-11-20"
 date-format: "D [de] MMMM [de] YYYY"
 lang: es
 format:
@@ -29,8 +29,6 @@ format:
 :::
 ::: {.column width="40%"}
 ![](img/foto.jpg){width="80%"}
-
-<!-- TODO(JL): copiar aquí la foto del proyecto -->
 :::
 :::
 
@@ -46,7 +44,7 @@ Si escribe el código por mí,
 
 ::: {.notes}
 Es la pregunta que se está haciendo media sala. Y sobre todo los estudiantes
-con el TFG a medias. Nombrarla ahora me compra su atención 35 minutos.
+con el TFG a medias. Nombrarla ahora me compra su atención toda la charla.
 :::
 
 ---
@@ -150,18 +148,29 @@ Y la segunda versión, con prisa, se hacía mal o no se hacía.
      chunks condicionales... Concrétalo: es lo que la gente va a querer copiar -->
 
 ::: {.notes}
-El informe catastral es el mejor ejemplo. Recuperar slides de charla granada
-TODO: una frase de qué es y por qué era buen candidato.
+El informe catastral es el mejor ejemplo. Recuperar slides de charla granada.
+
+Qué es: le das una referencia catastral y compara lo que predice nuestro
+modelo de valoración (AVM) para esa vivienda con los anuncios comparables de
+su zona, mes a mes, desde enero de 2025.
+
+Por qué era buen candidato: se repite para muchas referencias, siempre con la
+misma estructura, y lo leen técnicos y negocio.
 :::
 
 ## {.smaller}
 
 ### El informe catastral
 
-![](img/empresa-informe.png)
+![](img/empresa-informe.png){fig-alt="Evolución trimestral de 2025 a 2026 del precio que predice el modelo para una vivienda frente a la mediana de los anuncios comparables. Sin eje de euros." width="95%"}
 
-<!-- TODO(JL): captura revisada por confidencialidad. Si hace falta, ofusca
-     las cifras y quédate con la estructura del documento -->
+*Una vivienda real. Sin euros, sin zona.*
+
+::: {.notes}
+Modelo: predicción del AVM para esa referencia catastral, por trimestre (columna price_model_cadastre del informe).
+Mercado: mediana trimestral del precio de los anuncios comparables de la zona.
+Gráfico generado con `scripts/grafico_informe_catastral.R` (mismo que Málaga).
+:::
 
 ## Dónde está el techo: **verificar** {.smaller}
 
@@ -174,9 +183,15 @@ TODO: una frase de qué es y por qué era buen candidato.
      No errores de sintaxis: esos los caza R solo. -->
 
 ::: {.callout-important}
-## Error 1
-*Cambio de orden en filas de una tabla html de plotly
-Datos de Andalucía totales no cuadraban*
+## Error real
+En una tabla, las filas cambiaron de orden.
+
+Los totales de Andalucía no cuadraban.
+:::
+
+::: {.notes}
+Sin capturas: el informe es confidencial. Lo cuento.
+Lo vi yo porque sabía qué total esperaba.
 :::
 
 . . .
@@ -220,8 +235,9 @@ Y de las más fáciles de enseñar con **una barra que se mueve**.
 
 ::: {.callout-warning}
 ## Que quede claro
-**La app muestrea correctamente.** No es un ejemplo de la IA equivocándose.
-Es una herramienta docente que funciona.
+**La app muestrea correctamente.** Es una herramienta docente que funciona.
+
+El error que os enseñaré no está en el muestreo.
 :::
 
 ## Qué me dio la IA {.smaller}
@@ -243,6 +259,11 @@ La barrera para que un profesor tenga
 su propio simulador **acaba de desaparecer**
 :::
 
+::: {.notes}
+Cómo lo construí, contado en el blog (8 mar 2026):
+https://muestrear-no-es-pecado.es/2026/03/sim_encuestas_claude_code.html
+:::
+
 ## Demo {.center background-color="#0f2233"}
 
 ::: {.r-fit-text}
@@ -250,52 +271,208 @@ Tres ejemplos
 :::
 
 ::: {.notes}
-GUION CERRADO. 4 minutos. Nada de explorar en directo.
+GUION CERRADO. 10 minutos. Detalle completo en guion.md.
 https://canadasreche.shinyapps.io/sim-encuestas-electorales/
+Antes: app abierta, una ejecución hecha, zoom 125 %, n = 1.200, 500 réplicas.
 
-0. Población simulada, respetando distribuciones reales. 
-1. Tamaño de muestra y margen de error. Uso diferentes muestras, tengo población simulada, puedo hacerlo , soy omnipotente
+0. POBLACIÓN (1 min). Pestaña Población, gráfico de voto por edad.
+   "España inventada. Conozco el voto de todos." Jóvenes: más Sumar y Vox.
+1. N (2,5 min). n = 400, Ejecutar, Distribuciones PP. Luego n = 4.000.
+   OJO: el eje se reajusta solo. Señalar los números: 27-37 frente a 30-34.
+   "10 veces más entrevistas, la dispersión baja a la tercera parte."
+2. NO RESPUESTA (2,5 min). n = 1.200, marcar no respuesta, Ejecutar.
+   Resultados Agregados: n efectivo ~800; PP y PSOE arriba, Vox y Sumar abajo.
+   "El problema no es a quién llamas, es quién te coge el teléfono." Silencio.
+3. PONDERAR (1,5 min). Marcar ponderación. Tarda ~40 s: explicar mientras.
+   Sesgo del PP vuelve a ~0; la SD sube.
+4. VOTANTE OCULTO (2 min). Desmarcar no respuesta y ponderación, marcar
+   deseabilidad. Distribuciones, Vox.
+   Línea roja en la cola. "Más muestra no lo arregla."
 
-2. Sesgo de no respuesta. La realidad no ha cambiado. El muestreo sigue
-   siendo correcto. Y la estimación se desplaza. <- aquí se hace el silencio.
-
-3. Votante oculto. Declaran algo distinto de lo que votan.
-
-PLAN B: si no arranca en 15 segundos, paso a la siguiente diapositiva.
+PLAN B: si no arranca en 15 s, o una simulación se cuelga, paso a las capturas.
 :::
 
-## Plan B {visibility="uncounted"}
+## Plan B · 1. Tamaño de muestra {visibility="uncounted" .smaller}
 
-<!-- TODO(JL): grabar tres clips de 30-60 s y ponerlos aquí.
-     Si la app no arranca en 15 segundos, avanzo a esta diapositiva
-     y nadie se entera. Ensayar así al menos una vez. -->
+500 encuestas simuladas sobre la misma población. Estimación del PP.
 
-::: {.panel-tabset}
-### n y margen de error
-![](img/demo-n.mp4)
+::: {.columns}
+::: {.column width="50%"}
+**n = 400**
 
-### No respuesta
-![](img/demo-norespuesta.mp4)
+![](img/encuesta-n400.png){fig-alt="Histograma de 500 estimaciones del PP con n igual a 400, entre 27 y 37 por ciento"}
+:::
+::: {.column width="50%"}
+**n = 4.000**
 
-### Votante oculto
-![](img/demo-oculto.mp4)
+![](img/encuesta-n4000.png){fig-alt="Histograma de 500 estimaciones del PP con n igual a 4000, entre 30 y 34 por ciento, mismo eje"}
+:::
 :::
 
-## Lo que todavía no está: la **cocina**
+. . .
 
-Ponderación y recuerdo de voto.
-
-Que es donde de verdad **se decide el titular**.
+10 veces más entrevistas. La dispersión solo baja a la tercera parte.
 
 ::: {.notes}
-Lo digo YO antes de que me lo pregunten. Convierte una carencia en una idea
-de futuro, y deja el gancho servido para el turno de preguntas.
+Mismo eje X en los dos (26 % a 38 %). Valor real del PP: 32,04 %.
+Desviación típica de las 500 estimaciones: 2,31 pp con n = 400 y 0,75 pp con n = 4.000.
+2,31 / 0,75 = 3,1, que es casi raíz de 10 = 3,16.
+Probabilidad de acertar el ganador: 61 % con n = 400 y 79 % con n = 4.000.
+:::
+
+## Plan B · 2. No respuesta {visibility="uncounted" .smaller}
+
+![](img/encuesta-norespuesta.png){fig-alt="Barras de voto real frente a estimado con sesgo de no respuesta por edad: PP y PSOE sobreestimados, Vox y Sumar infraestimados" width="85%"}
+
+El muestreo es correcto. **La realidad no ha cambiado.** Y la estimación se mueve.
+
+::: {.notes}
+Qué hace la app, en tres pasos:
+1. Saca una muestra aleatoria simple de 1.200 personas. Esto está bien hecho.
+2. Cada persona contesta o no según su edad: 40 % de 18-24, 50 % de 25-34,
+   60 % de 35-44, 70 % de 45-54, 80 % de 55-64 y 85 % de 65+.
+3. Calcula el voto solo con los que contestan. Quedan unas 800 (un tercio no contesta).
+
+Por qué se mueve la estimación:
+- Los que contestan son más mayores que la población.
+- En la población simulada, los jóvenes votan más Vox y Sumar,
+  y los mayores votan más PP y PSOE.
+- Resultado: la encuesta oye de más a los mayores. Sube PP y PSOE, baja Vox y Sumar.
+
+Cifras (estimado − real, en puntos): PP +0,81, PSOE +0,50, Vox −0,52, Sumar −0,71.
+
+La frase: nadie ha mentido y el muestreo es correcto.
+El problema no es a quién llamas, es quién te coge el teléfono.
+
+Cómo leer el gráfico: barra azul = voto real; naranja = media de las 500 encuestas.
+La rayita negra cubre el 95 % central de las 500 estimaciones (no es un intervalo de una sola encuesta).
+
+Si preguntan "¿y si pido más muestra?": no se arregla. Con más n, las encuestas
+se equivocan igual, pero todas en el mismo sitio.
+El arreglo es ponderar por edad y sexo: lo enseño en "La cocina".
+:::
+
+## Plan B · 3. Votante oculto {visibility="uncounted" .smaller}
+
+![](img/encuesta-oculto-vox.png){fig-alt="Histograma de 500 estimaciones de Vox con sesgo de deseabilidad social: la media estimada, 9 por ciento, queda a la izquierda del valor real, 10,5 por ciento" width="85%"}
+
+Casi todas las encuestas se quedan **por debajo** del valor real.
+
+::: {.notes}
+Sesgo de deseabilidad social en Vox, n = 1.200, 500 réplicas.
+Real 10,50 %; media de las estimaciones 8,97 %; diferencia −1,53 puntos.
+El percentil 97,5 de las réplicas es 10,50 %: el valor real queda justo en el borde.
+Más muestra no lo arregla: el sesgo no baja con n.
+:::
+
+## Plan B · Los escenarios juntos {visibility="uncounted" .smaller}
+
+![](img/encuesta-escenarios.png){fig-alt="Tabla de cuatro escenarios con n igual a 1200 y 500 réplicas: error medio absoluto y probabilidad de acertar el ganador"}
+
+::: {.notes}
+MAE = media, sobre los 10 partidos y las 500 réplicas, de |estimado − real|, en puntos.
+El MAE apenas sube (0,55 a 0,73) porque promedia 10 partidos y 6 casi no se mueven.
+Ponderar corrige el sesgo (PP de +0,81 a −0,01) pero no baja el MAE (0,72):
+la varianza sube porque solo quedan 800 entrevistas efectivas.
+Capturas generadas con `scripts/capturas_simulador.R`.
+:::
+
+## La Ayuda sonaba perfecta {.smaller}
+
+![](img/cobertura-ayuda.png){fig-alt="Texto de la Ayuda de la app: Cobertura, proporción de veces que el IC 95 % contiene el valor real, ideal 0,95" width="90%"}
+
+. . .
+
+![](img/cobertura-tabla.png){fig-alt="Tabla de resultados con votante oculto: Vox con sesgo de menos 1,61 puntos y cobertura 1" width="90%"}
+
+. . .
+
+Vox: sesgo de **−1,6 puntos** y cobertura **1**. Eso no puede ser.
+
+::: {.notes}
+Lo escribió la IA, confirmado por mí.
+La Ayuda define cobertura bien, como en un libro.
+El código hace otra cosa:
+- Junta las 500 estimaciones y calcula UN solo intervalo:
+  del percentil 2,5 al percentil 97,5.
+- Mira si el valor real cae dentro. Pone 1 si cae, 0 si no.
+Eso responde "¿el valor real es un resultado posible?". No es una cobertura.
+Por eso Vox, con sesgo −1,6 puntos, sale con cobertura 1.
+Siguiente diapositiva: cómo se hace bien.
+:::
+
+## La cobertura, bien calculada {.smaller}
+
+![](img/cobertura-intervalos.png){fig-alt="Dos paneles con 50 intervalos de confianza del 95 por ciento para el voto a Vox. Sin sesgo, 482 de 500 contienen el valor real de 10,5 por ciento. Con votante oculto, solo 257 de 500" width="95%"}
+
+Un intervalo **por encuesta**. Cuento cuántos tocan el valor real.
+
+::: {.notes}
+Cómo se calcula bien, en tres pasos:
+1. Cada encuesta da su estimación p y su IC 95 %: p ± 1,96 × raíz(p(1 − p) / n).
+2. Miro si el valor real (10,5 %) cae dentro de ese intervalo.
+3. Cobertura = intervalos que lo contienen / total de encuestas.
+
+Sin sesgo: 482 de 500 = 96 %. Lo que promete un IC del 95 %.
+Votante oculto: 257 de 500 = 51 %. Media de las encuestas que dicen "95 %
+de confianza" no contienen el valor real.
+
+La app pondría 1 en los dos casos.
+
+Método: simulación propia, no sale de la app. 500 encuestas de n = 1.200.
+Proporción declarada: 10,5 % sin sesgo; 8,9 % con votante oculto
+(la media que dio la app). Se dibujan 50 de las 500.
+Script: scripts/grafico_cobertura.R.
+
+Frase: el texto de la Ayuda era convincente. El número no significaba eso.
+Solo lo ve quien sabe qué es una cobertura.
+:::
+
+## La **cocina** {.smaller}
+
+Donde de verdad **se decide el titular**: ponderar y modelizar.
+
+. . .
+
+- La ponderación post-estratificación **ya está en la app**. Corrige la no respuesta.
+- Lo siguiente, varias encuestas y MRP, está en el blog:
+
+[MRP con varias encuestas (I): nueve encuestas y una tabla de postestratificación](https://muestrear-no-es-pecado.es/2026/11/mrp-multiencuesta/)
+
+::: {.notes}
+Lo digo YO antes de que me lo pregunten.
+Dato de la demo: ponderar lleva el sesgo del PP de +0,81 a −0,01 puntos,
+pero el MAE no baja (0,73 a 0,72): quedan unas 800 entrevistas efectivas.
+Si preguntan por raking: https://muestrear-no-es-pecado.es/2026/10/mrp-raking/
+Parte II del MRP: https://muestrear-no-es-pecado.es/2026/11/mrp-multiencuesta/ii-modelo.html
+:::
+
+## Octubre de 2026 {.smaller}
+
+| Periodo | Posts en el blog |
+|---|---|
+| Enero a septiembre de 2026 (9 meses) | 7 |
+| Octubre de 2026 (1 mes) | **7** |
+
+Meta-análisis, escaños, MRP, modelo bayesiano completo. Todos con IA.
+
+. . .
+
+¿Es la IA o son las generales del 29-N?
+
+**Soy estadístico: no puedo separar los dos efectos.**
+
+::: {.notes}
+Método: posts por mes según el RSS del blog (blog.xml), consultado el 3 nov 2026.
+Enero 2026: 3 (Cachitos), marzo: 1, mayo: 2, julio: 1. Octubre: 7.
+Los de octubre son con IA asistida (lo sé yo, no lo dice el RSS).
+El chiste es serio: hay una variable de confusión, las elecciones.
+Es el suelo subiendo, y también un ejemplo de interpretar.
 :::
 
 ## Qué puso el estadístico: el **diseño** {.smaller}
 
-Aquí no hay ningún error de la IA que enseñar. Y por eso este bloque es
-interesante.
+El muestreo estaba bien. El error estaba en una definición que sonaba perfecta.
 
 . . .
 
@@ -334,15 +511,21 @@ No le importa a nadie. No lo paga nadie. No cabe en un fin de semana.
 
 ## Qué me dio la IA {.smaller}
 
-Descarga, limpieza de los datos del Garmin, exploración, gráficos.
+Descarga, limpieza de los datos del Garmin, exploración, gráficos. Y un panel.
+
+![](img/natacion-app.png){fig-alt="Panel Shiny 'Mi Garmin – Natación' con 190 sesiones y 139,6 km en el último año, y gráficos de brazadas y ritmo por sesión" width="80%"}
 
 <!-- TODO(JL): 1-2 hallazgos concretos sobre tu natación. Cuanto más personal
      y sorprendente, mejor: aquí el público está relajado y es cuando más se
      acuerdan de lo que dices -->
 
-![](img/natacion.png)
+::: {.notes}
+Periodo del panel: 2025-11-02 a 2026-11-02. 190 sesiones, 139,6 km,
+57 h 21 min de tiempo activo.
+https://canadasreche.shinyapps.io/mi-garmin-dashboard/
+:::
 
-. . .
+## {.center}
 
 ::: {.r-fit-text}
 Este es el caso donde **el suelo sube más**
@@ -352,22 +535,52 @@ Un análisis que no se habría hecho jamás, ahora existe.
 
 No porque sea difícil: porque nunca habría merecido las horas.
 
+## Pregúntale al panel {.smaller}
+
+![](img/natacion-pregunta.png){fig-alt="Caja de texto con la pregunta: compara el ritmo de mi última sesión con la mejor sesión de todo el histórico"}
+
+. . .
+
+![](img/natacion-respuesta.png){fig-alt="El panel responde: compara la sesión del 24 de octubre de 2026, 1050 m a 2:32 por 100 m, con la del 10 de octubre de 2026, 50 m a 1:52 por 100 m, y abre la pestaña Comparar" width="85%"}
+
+::: {.notes}
+Dentro del panel hay un modelo de IA (jev). No escribe texto: decide una
+acción sobre el propio dashboard. Pone filtros, elige sesiones y cambia de
+pestaña. Aquí ha ido a "Comparar" y ha rellenado la sesión A y la B.
+
+Contraseña y límite de 10 preguntas por sesión, para que no me arruinen.
+:::
+
 ## Qué puso el estadístico: **interpretar** {.smaller}
 
-Los gráficos salen solos.
+El panel contestó **exactamente** lo que le pregunté.
 
-Saber si esa mejora **es una mejora** —o es que ese mes nadé menos series
-largas— no.
+| | Última sesión | "La mejor" |
+|---|---|---|
+| Fecha | 24 oct 2026 | 10 oct 2026 |
+| Distancia | 1050 m | **50 m** |
+| Tiempo activo | 27 min | **1 min** |
+| Ritmo | 2:32 /100 m | 1:52 /100 m |
 
-<!-- TODO(JL): el ejemplo concreto. Idealmente uno donde el gráfico sugiere
-     una cosa y la explicación real es otra -->
+. . .
+
+La "mejor sesión" es **un largo**. Comparo un esprint con una sesión entera.
+
+La pregunta buena era otra: *la mejor sesión de más de 1000 m*.
 
 . . .
 
 ::: {.r-fit-text}
-La respuesta llegó en diez minutos.
+La respuesta llegó en diez segundos.
 
 **La pregunta la puse yo.**
+:::
+
+::: {.notes}
+Nadie se equivocó: la IA tomó "mejor" como "ritmo más bajo", que es lo que
+dije. Lo que faltaba es lo que sabe un estadístico: comparar cosas comparables.
+Si le pongo un mínimo de distancia, la comparación ya tiene sentido.
+<!-- TODO(JL): probar la pregunta con "de más de 1000 m" y, si sale bien, captura -->
 :::
 
 # Cierre {background-color="#1a3a5c"}
