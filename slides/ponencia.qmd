@@ -646,4 +646,18 @@ Que es lo que se enseña aquí.
 
 idealista · Senior Data Scientist
 
-<!-- TODO(JL): blog, GitHub, mastodon/bluesky, correo -->
+<br>
+
+::: {.smaller}
+Blog: [muestrear-no-es-pecado.es](https://muestrear-no-es-pecado.es/blog)
+
+GitHub: [github.com/joscani](https://github.com/joscani)
+
+Bluesky: [@joscani.muestrear-no-es-pecado.es](https://bsky.app/profile/joscani.muestrear-no-es-pecado.es)
+
+Mastodon: [@joscani@fosstodon.org](https://fosstodon.org/@joscani)
+
+X: [@joscani](https://x.com/joscani)
+
+Diapositivas: [github.com/joscani/charla_siguenza](https://github.com/joscani/charla_siguenza)
+:::
